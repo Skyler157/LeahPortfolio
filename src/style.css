@@ -596,8 +596,14 @@ button:focus {
 }
 .tech-icon-images {
   height: 1.6rem;
-  line-height: 1.6 !important;
 }
+.tech-icons img {
+  height: 1.6rem;
+  width: 1.6rem;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
 
 .quote-card-view {
   border: none !important;
