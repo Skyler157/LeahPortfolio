@@ -4,8 +4,23 @@ import Particle from "../Particle";
 import Techstack from "./Techstack";
 import AboutCard from "./AboutCard";
 import laptopImg from "../../Assets/about.png";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 function About() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.getElementById(location.hash.replace("#", ""));
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [location]);
+
   return (
     <>
       <Particle />
@@ -33,12 +48,15 @@ function About() {
           </Row>
 
           {/* Skillset Section */}
-          <h1 className="project-heading text-center" style={{ marginBottom: "30px" }}>
+          <h1
+            id="skills"
+            className="project-heading text-center"
+            style={{ marginBottom: "30px" }}>
             Professional <strong className="purple">Skillset</strong>
           </h1>
           <Techstack />
 
-          
+
         </Container>
       </Container>
     </>

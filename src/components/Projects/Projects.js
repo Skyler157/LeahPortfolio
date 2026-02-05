@@ -1,10 +1,8 @@
-// Projects.js
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
 
-// Images
 import Proconnect from "../../Assets/Projects/Proconnect.png";
 import EcommerceClothingPlatform from "../../Assets/Projects/EcommerceClothingPlatform.png";
 import MonitoringTool from "../../Assets/Projects/MonitoringTool.png";

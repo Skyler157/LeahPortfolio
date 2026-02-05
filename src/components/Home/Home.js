@@ -6,9 +6,8 @@ import Home2 from "./Home2";
 import Type from "./Type";
 import {
   AiFillGithub,
-  AiFillInstagram,
 } from "react-icons/ai";
-import { FaEnvelope, FaLinkedinIn } from "react-icons/fa";
+import { FaEnvelope, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
 
 function Home() {
   return (
@@ -87,12 +86,11 @@ function Home() {
               </li>
               <li className="social-icons">
                 <a
-                  href="https://www.instagram.com"
-                  target="_blank"
-                  rel="noreferrer"
+                  href="https://wa.me/254796886037"
                   className="icon-colour home-social-icons"
+                  aria-label="WhatsApp"
                 >
-                  <AiFillInstagram />
+                  <FaWhatsapp />
                 </a>
               </li>
             </ul>
