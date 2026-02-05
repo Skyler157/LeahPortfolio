@@ -25,7 +25,7 @@ function About() {
             <Col md={4} className="text-center mb-4">
               <img
                 src={laptopImg}
-                alt="Leah Wanjiru Gitau"
+                alt="Leah Gitau"
                 className="img-fluid rounded shadow-lg"
                 style={{ maxHeight: "350px" }}
               />
