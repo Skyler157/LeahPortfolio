@@ -9,12 +9,14 @@ import {
   AiOutlineUser,
   AiOutlineProfile, // added this for Skills
 } from "react-icons/ai";
+import { FiMoon, FiSun } from "react-icons/fi";
 
 import { CgFileDocument } from "react-icons/cg";
 
-function NavBar() {
+function NavBar({ theme = "dark", onToggleTheme = () => {} }) {
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
+  const isDark = theme === "dark";
 
   function scrollHandler() {
     if (window.scrollY >= 20) {
@@ -98,6 +100,18 @@ function NavBar() {
               >
                 <CgFileDocument style={{ marginBottom: "2px" }} /> Resume
               </Nav.Link>
+            </Nav.Item>
+
+            <Nav.Item className="theme-toggle">
+              <button
+                type="button"
+                className="theme-toggle-btn"
+                onClick={onToggleTheme}
+                aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+                title={isDark ? "Switch to light mode" : "Switch to dark mode"}
+              >
+                {isDark ? <FiSun /> : <FiMoon />}
+              </button>
             </Nav.Item>
           </Nav>
         </Navbar.Collapse>

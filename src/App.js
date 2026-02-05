@@ -17,8 +17,23 @@ import "./style.css";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+const getInitialTheme = () => {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "light" || savedTheme === "dark") {
+    return savedTheme;
+  }
+
+  if (window.matchMedia) {
+    const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
+    return prefersLight ? "light" : "dark";
+  }
+
+  return "dark";
+};
+
 function App() {
   const [load, upadateLoad] = useState(true);
+  const [theme, setTheme] = useState(() => getInitialTheme());
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -28,11 +43,20 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const handleToggleTheme = () => {
+    setTheme((currentTheme) => (currentTheme === "dark" ? "light" : "dark"));
+  };
+
   return (
     <Router>
       <Preloader load={load} />
       <div className="App" id={load ? "no-scroll" : "scroll"}>
-        <Navbar />
+        <Navbar theme={theme} onToggleTheme={handleToggleTheme} />
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
