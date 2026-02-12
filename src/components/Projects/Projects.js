@@ -9,6 +9,7 @@ import MonitoringTool from "../../Assets/Projects/MonitoringTool.png";
 import QueueSystem from "../../Assets/Projects/QueueSystem.png";
 import FreshCart from "../../Assets/Projects/FreshCart.png";
 import HospitalManagementSystem from "../../Assets/Projects/HospitalManagementSystem.png";
+import ReelSnap from "../../Assets/Projects/ReelSnap.png";
 import SystemDowntimeMonitor from "../../Assets/Projects/SystemDowntimeMonitor.png";
 
 function Projects() {
@@ -48,7 +49,7 @@ function Projects() {
         "Service Queue Management System is a React-based application designed to streamline customer service operations across multiple departments. It allows ticket booking, real-time queue monitoring, ticket management by tellers, and detailed reports for completed and skipped tickets. Also includes a self-service booking page for customers.",
       ghLink: "http://github.com/Skyler157/Queueing-System",
     },
-    
+
     {
       imgPath: HospitalManagementSystem,
       title: "Hospital Management System",
@@ -57,12 +58,19 @@ function Projects() {
       ghLink: "https://github.com/Skyler157/HospitalManagementSystem",
     },
     {
+      imgPath: ReelSnap,
+      title: "ReelSnap",
+      description:
+        "ReelSnap is a full-stack Laravel web application I built to streamline Instagram Reel and post video downloads through a secure and user-friendly workflow. Users paste a valid Instagram URL, fetch metadata and preview the content, then either download the MP4 directly or open a signed in-app preview page with quick navigation back to home. Under the hood, the app integrates with RapidAPI, enforces strict URL and host validation, uses signed temporary links for sensitive actions, streams downloads to reduce server memory usage, rate-limits requests to prevent abuse, and stores hashed IPs for privacy-aware analytics. I also designed and refined the UI for a cleaner experience, implemented automated tests for critical flows, and documented deployment.",
+      ghLink: "https://github.com/Skyler157/reelsnap",
+    },
+    {
       imgPath: SystemDowntimeMonitor,
       title: "System Downtime Monitor",
       description:
         "Full-stack monitoring platform for critical IT resources. Detects issues automatically, logs alerts, and notifies administrators via email and SMS. Frontend: React + Tailwind CSS with real-time metrics, charts, and searchable tables. Backend: Node.js handling monitoring, alert management, and integrations with SMS and email APIs.",
       ghLink: "https://github.com/Skyler157/system-downtime-monitor2",
-    },
+    }
   ];
 
   return (
